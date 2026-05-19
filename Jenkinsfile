@@ -1,14 +1,10 @@
 pipeline{
     agent any
+
     stages{
-        stage{
-            step('Memory'){
+        stage('Memory'){
+            step{
                 sh "df -h"
-            }
-        }
-        stage{
-            step('Disk'){
-                sh "htop"
             }
         }
     }
