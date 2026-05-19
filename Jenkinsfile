@@ -3,7 +3,7 @@ pipeline{
 
     stages{
         stage('Memory'){
-            step{
+            steps{
                 sh "df -h"
             }
         }
