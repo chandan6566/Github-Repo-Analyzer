@@ -1,10 +1,9 @@
 pipeline{
     agent any
-
     stages{
-        stage('Memory'){
-            steps{
-                sh "df -h"
+        stage{
+            step{
+                sh 'docker build -t myapp:latest .'
             }
         }
     }
