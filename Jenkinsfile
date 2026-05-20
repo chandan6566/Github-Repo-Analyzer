@@ -8,7 +8,7 @@ pipeline{
         }
         stage('Running Docker Image'){
             steps{
-                sh 'docker run -d -p 6060:8080 myapp:latest'
+                sh 'docker run --rm myapp:latest'
                 sh 'docker ps'
             }
         }
