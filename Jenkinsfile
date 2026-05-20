@@ -8,7 +8,7 @@ pipeline{
         }
         stage('Running Docker Image'){
             steps{
-                sh 'docker run -d --name myapp-container -p 5000:5000 myapp:latest'
+                sh 'docker run -d --name myapp-container -p 5001:5000 myapp:latest'
                 sh 'docker stop myapp-container'
                 sh 'docker ps -a'
             }
