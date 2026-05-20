@@ -9,6 +9,7 @@ pipeline{
         stage('Running Docker Image'){
             steps{
                 sh 'docker run --rm myapp:latest'
+                sh 'docker stop myapp-container'
                 sh 'docker ps -a'
             }
         }
@@ -16,6 +17,11 @@ pipeline{
             steps{
                 sh 'docker tag myapp:latest chandan6566/python-app'
                 sh 'docker images'
+            }
+        }
+        stage('Docker Login'){
+            steps{
+                sh 'docker login -u chandan6566 -p <Chandangowda@6>'
             }
         }
     }
