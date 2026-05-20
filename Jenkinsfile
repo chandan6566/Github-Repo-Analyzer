@@ -12,5 +12,11 @@ pipeline{
                 sh 'docker ps'
             }
         }
+        stage('Tagging Docker Image'){
+            steps{
+                sh 'docker tag myapp:latest chandan6566/python-app'
+                sh 'docker images'
+            }
+        }
     }
 }
