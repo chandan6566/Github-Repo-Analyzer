@@ -26,7 +26,11 @@ pipeline{
         }
         stage('Docker Login'){
             steps{
-                sh 'docker login -u chandan6566 -p Chandangowda@6'
+                withCredentials([usernamePassword(credentialsId: 'chandan6566',
+                                                      passwordVariable: 'DockerhubPassword',
+                                                      usernameVariable: 'DockerhubUserName')]) {
+                sh 'echo "$DockerhubPassword" | docker login -u "$DockerhubUserName" --password-stdin'
+                }
             }
         }
         stage('Pushing Docker Image'){
