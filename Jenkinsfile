@@ -8,7 +8,7 @@ pipeline{
         }
         stage('Running Docker Image'){
             steps{
-                sh 'docker run --rm myapp:latest'
+                sh 'docker run --rm -d myapp:latest'
                 sh 'docker stop myapp-container'
                 sh 'docker ps -a'
             }
