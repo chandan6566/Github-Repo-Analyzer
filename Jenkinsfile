@@ -9,7 +9,7 @@ pipeline{
         stage('Running Docker Image'){
             steps{
                 sh 'docker run --rm myapp:latest'
-                sh 'docker ps'
+                sh 'docker ps -a'
             }
         }
         stage('Tagging Docker Image'){
