@@ -30,5 +30,10 @@ pipeline{
                 sh 'docker login -u chandan6566 -p Chandangowda@6'
             }
         }
+        stage('Pushing Docker Image'){
+            steps{
+                sh 'docker push chandan6566/python-app'
+            }
+        }
     }
 }
