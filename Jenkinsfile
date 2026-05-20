@@ -21,7 +21,7 @@ pipeline{
         }
         stage('Docker Login'){
             steps{
-                sh 'docker login -u chandan6566 -p <Chandangowda@6>'
+                sh 'docker login -u chandan6566 -p Chandangowda@6'
             }
         }
     }
