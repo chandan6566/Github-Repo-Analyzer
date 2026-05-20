@@ -2,7 +2,7 @@ pipeline{
     agent any
     stages{
         stage('Build Docker Image'){
-            step{
+            steps{
                 sh 'docker build -t myapp:latest .'
             }
         }
